@@ -12,10 +12,9 @@ import java.util.Scanner;
  *                                              @author Jeffrey Jason Stroth
  */
 public class GUI extends javax.swing.JFrame 
-{
-    
+{    
      Tree234 theTree = new Tree234();
-     Tree234 root;
+     Node root;
       
       // get string from readText() function.
       // pass string to insert function of Tree class
@@ -36,21 +35,23 @@ public class GUI extends javax.swing.JFrame
        
     public String printOut() 
     {
-        return recursivePrintOut(root);                          //****Problem with converting object************
+        return recursivePrintOut(root,0,0);                          //****Problem with converting object************
     }
     
-    private void recursivePrintOut(Node thisNode)
+    private String recursivePrintOut(Node thisNode, int level, int childNumber)
     {
-        thisNode.displayNode();
+      String answer = "level="+level+" child="+childNumber+" ";
+      thisNode.displayNode();
       int numItems = thisNode.getNumItems();
       for(int j=0; j<numItems+1; j++)
          {
          Node nextNode = thisNode.getChild(j);
          if(nextNode != null)
-           recursivePrintOut(nextNode);
+           recursivePrintOut(nextNode,level+1, j);
          else
-            return;
-         }      
+            return answer;
+         }
+      return "";
     }
     /**
      * Creates new form GUI

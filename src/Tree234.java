@@ -12,13 +12,13 @@
 public class Tree234
 {
    private Node root = new Node();       
-   public int find(int key)             
+   public int find(String key)             
       {
       Node curNode = root;
       int childNumber;
       while(true)
          {
-         if(( childNumber= curNode.findItem(key) ) != -1)
+         if(( childNumber = curNode.findItem(key) ) != -1)          //*********************************************8
             return childNumber;            
          else if( curNode.isLeaf() )
             return -1;                       
