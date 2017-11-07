@@ -12,20 +12,7 @@
 public class Tree234
 {
    private Node root = new Node();       
-   public int find(String key)             
-      {
-      Node curNode = root;
-      int childNumber;
-      while(true)
-         {
-         if(( childNumber = curNode.findItem(key) ) != -1)          //*********************************************8
-            return childNumber;            
-         else if( curNode.isLeaf() )
-            return -1;                       
-         else                                 
-            curNode = getNextChild(curNode,key);
-         }  
-      }
+
    public void insert(String dValue)
       {
       Node curNode = root;
@@ -35,10 +22,9 @@ public class Tree234
          {
          if( curNode.isFull() )               
             {
-            split(curNode);                 
-            curNode = curNode.getParent();    
-                                             
-            curNode = getNextChild(curNode, dValue);
+                split(curNode);                 
+                curNode = curNode.getParent();   
+                curNode = getNextChild(curNode, dValue);
             }  
 
          else if( curNode.isLeaf() )        
@@ -46,7 +32,6 @@ public class Tree234
          else
             curNode = getNextChild(curNode, dValue);
          }
-
       curNode.insertItem(tempItem);     
       }
    
@@ -84,11 +69,9 @@ public class Tree234
       newRight.connectChild(1, child3); 
       }  
 
-
    public Node getNextChild(Node theNode, String theValue)       
       {
-      int j;
-     
+      int j;     
       int numItems = theNode.getNumItems();
       for(j=0; j<numItems; j++)          
          {                              

@@ -31,11 +31,11 @@ public class GUI extends javax.swing.JFrame
             String word = scan.nextLine();
             theTree.insert(word);
         }
-    }
-       
+    }       
+    
     public String printOut() 
     {
-        return recursivePrintOut(root,0,0);                          //****Problem with converting object************
+        return recursivePrintOut(root,0,0);                        
     }
     
     private String recursivePrintOut(Node thisNode, int level, int childNumber)

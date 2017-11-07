@@ -1,6 +1,6 @@
 /**                                      @author Jefrey Jason Stroth
  * 
- * Found parts of this code online and tailored it to fit my program:
+ * Found part of this code online and tailored it:
  * https://www.unf.edu/~wkloster/3540/234tree.java
  */
 
@@ -11,8 +11,8 @@ public class Node
    private Node parent;
    private Node childArray[] = new Node[ORDER];
    private DataItem itemArray[] = new DataItem[ORDER-1];
-   //private DataItem count = new DataItem (int);              ******* Need to fix Counter**********
-
+   //private DataItem count = new DataItem();
+   
    // connect child to this node
    public void connectChild(int childNum, Node child)
       {
@@ -75,7 +75,7 @@ public class Node
             break;
          else
             {
-     //           count = count++;                                          // increase count by one
+               // count = count++;                                          // increase count by one
             }
          return j;
          }
@@ -115,7 +115,7 @@ public class Node
       return temp;                            
       }
 
-   public void displayNode()         
+   public void displayNode()        
       {
       for(int j=0; j<numItems; j++)
          itemArray[j].displayItem();        

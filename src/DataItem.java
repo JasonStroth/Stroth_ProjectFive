@@ -25,6 +25,6 @@ public class DataItem
        
    public void displayItem()   
    {
-       System.out.println(" "+dData+": "+count+".");
+      System.out.println(" "+dData+": "+count+".");
    }
 }
